@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.86.0'
+project:
+    name: profile-picture-in-github-history
+    package:
+        name: profile-picture-in-github-history
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/profile-picture-in-github-history/tests
+            options:
+                outputdir: robot/profile-picture-in-github-history/results
+
+    robot_testdoc:
+        options:
+            path: robot/profile-picture-in-github-history/tests
+            output: robot/profile-picture-in-github-history/doc/profile-picture-in-github-history_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
